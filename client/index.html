@@ -188,15 +188,37 @@
   delete fishBowl.size;
   // Objects as key : val dictionary
   // use over switch Function
-  var redBottoms = {
-    'color': 'red',
-    'number': 2,
-    'shoe': 'balenciagas',
-  };
-  // mutator function must be placed outside object
-  function getPrice(type) {
-    type.price = type.number * type.shoe.length;
-    return redBottoms.price;
+  var kicks = {
+    // Use of an object array (nested objects)
+    redBottoms: {
+      'color': 'red',
+      'number': 2,
+      'shoe': 'balenciagas',
+    },
+
+    blueBottoms: {
+      'color': 'red',
+      'number': 50,
+      'shoe': 'gucci',
+    }
   }
-  console.log('These shoes cost $' + getPrice(redBottoms));
+
+  function hasProp(obj, prop) {
+    // .hasOwnProperty returns true or false on whether obj has property
+    return (obj.hasOwnProperty(prop)) ? "I've got it!" : "Don't have it sorry"
+  }
+
+  // mutator function must be placed outside object
+  function getPrice(obj) {
+    obj.price = obj.number * obj.shoe.length;
+    return obj.price;
+  }
+  // redBottoms
+  console.log(hasProp(kicks.redBottoms, 'price'));
+  console.log('These shoes cost $' + getPrice(kicks.redBottoms));
+  console.log(hasProp(kicks.redBottoms, 'price'));
+  // blueBottoms
+  console.log(hasProp(kicks.blueBottoms, 'price'));
+  console.log('These shoes cost $' + getPrice(kicks.blueBottoms));
+  console.log(hasProp(kicks.blueBottoms, 'price'));
 </script>
