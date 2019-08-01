@@ -71,8 +71,10 @@
   y++; // shorthand for add 1 to y
   console.log("x = " + x + ", y = " + y);
   y--; // shorthand for subtract 1 from y
-  // to add or subtract more than 1 from a value, use the syntax var += value;
+  // to add, subtract, multiply, or divide more than 1 from a value, use the syntax var += value;
   // substitue a "-" sign for subtraction
+  // substitue a "*" sign for multiplication
+  // substitue a "/" sign for division
 
   // unlike java, the number type divides properly (no int division by default)
   console.log("3 / 2 =" + (3 / 2));
@@ -82,6 +84,16 @@
   // Defualts to least amount of floating points with arithmetic
   var d = c * y;
   console.log("d = " + d);
+
+  // Strings and common issues
+  var quotes = "\"\""; // use escape character for quotes (\")to retain syntax while printing quotes
+  console.log(quotes);
+  // Using single quotes for a string also works
+  var alsoQuotes = '""';
+  console.log(alsoQuotes);
+  // Great code hack
+  var backTicks = `'""'`;
+  console.log(backTicks);
 
 
 </script>
