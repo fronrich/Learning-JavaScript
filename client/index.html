@@ -40,4 +40,21 @@
   var x;
   var y = 10;
   x = y;
+
+  // You can use arithmetic when assigning and redefining variables
+  var a = x + y; // this should be 20
+  var b = a * x; // this should be 200
+
+  // Use string concatonation to display variables and their respective values
+  console.log("x = " + x + ", y = " + y);
+  console.log("a = " + a);
+  console.log("b = " + b);
+
+  // Primatives are not reference objects
+  // Since y is making a copy of x, and not pointing to x, x is not affected
+  // by changes in y;
+  y++; // means to add 1 to y
+  console.log("x = " + x + ", y = " + y);
+
+  // You can use arithmetic
 </script>
