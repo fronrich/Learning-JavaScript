@@ -138,6 +138,16 @@
     console.log('a is not equal to b');
   }
 
+  // Comparing Objects
+  // Equality vs Identity
+  /* The equality operator (==) will attempt to make the data
+  types the same before making the comparison.
+  On the other hand, the identity operator (===) requires both
+  data types to be the same as a prerequisite. */
+  // Ex.
+  // 1 == true => true
+  // 1 === true => false
+
   // Switch statments - shorthand for if statment chains
   // Example with alphabet
   function alphaIndex(val) {
@@ -191,20 +201,21 @@
   var kicks = {
     // Use of an object array (nested objects)
     redBottoms: {
-      'color': 'red',
-      'number': 2,
-      'shoe': 'balenciagas',
+      'color': 'red', // variable names can be strings, but do not have to be
+      number: 2,
+      shoe: 'balenciagas'
     },
 
     blueBottoms: {
-      'color': 'red',
-      'number': 50,
-      'shoe': 'gucci',
+      color: 'red',
+      number: 50,
+      shoe: 'gucci'
     }
   }
   // Copy of the object for testing purposes
   var kicksCopy = JSON.parse(JSON.stringify(kicks)); // Quick copy function chain
 
+  //
   function hasProp(obj, prop) {
     // .hasOwnProperty returns true or false on whether obj has property
     return (obj.hasOwnProperty(prop)) ? "I've got it!" : "Don't have it sorry"
@@ -223,4 +234,7 @@
   console.log(hasProp(kicks.blueBottoms, 'price'));
   console.log('These shoes cost $' + getPrice(kicks.blueBottoms));
   console.log(hasProp(kicks.blueBottoms, 'price'));
+</script>
+<script type="text/javascript" src="../data-structures/closet.js">
+
 </script>
