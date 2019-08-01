@@ -141,6 +141,7 @@
   // Switch statments - shorthand for if statment chains
   // Example with alphabet
   function alphaIndex(val) {
+    let toReturn;
     switch (val) {
       case 1:
         // Put function in here
@@ -152,7 +153,7 @@
       case 3:
         toReturn = 'c';
         break;
-      // Multiple cases same output syntax
+        // Multiple cases same output syntax
       case 4:
       case 5:
       case 6:
@@ -166,4 +167,36 @@
   }
   // should print 'a, b, c , I wasn't designed for this
   console.log(alphaIndex(1) + ', ' + alphaIndex(2) + ', ' + alphaIndex(3) + ', ' + alphaIndex(4));
+
+  // Objects - defined as variables with properties
+  var fishBowl = {
+    'size': 'big', // syntax for defining properties of object
+    'fish': 5
+  };
+  // accessing object properties
+  console.log(fishBowl.size); // should print 'big'
+  var size = fishBowl['size'];
+  console.log(size); // brackets work too as properties are enumerated
+  // modifying object properties
+  fishBowl.size = 'small';
+  console.log(fishBowl.size); // should print 'small'
+  // add properties
+  // come up with a new var nameTag
+  fishBowl.isClean = true;
+  console.log(fishBowl.isClean);
+  // delete property
+  delete fishBowl.size;
+  // Objects as key : val dictionary
+  // use over switch Function
+  var redBottoms = {
+    'color': 'red',
+    'number': 2,
+    'shoe': 'balenciagas',
+  };
+  // mutator function must be placed outside object
+  function getPrice(type) {
+    type.price = type.number * type.shoe.length;
+    return redBottoms.price;
+  }
+  console.log('These shoes cost $' + getPrice(redBottoms));
 </script>
