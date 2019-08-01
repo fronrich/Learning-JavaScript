@@ -107,10 +107,63 @@
   var hello = par[0]; // hello should equal h
   console.log('hello = ' + hello);
 
+  // Arrays - also dynamically typed
+  // Arrays are mutable by modifying their indexes
+  // adding brackets [][][] allows you to modify different
+  // dimensions of the array
+  var nameTag = ['Vim', 19];
+  // Nested arrays are possible
+  nameTag = [nameTag,
+    nameTag
+  ]; // pointers to original nameTag
+  console.log(nameTag);
+  console.log(JSON.stringify(nameTag)); // use JSON.stringify(array) as a toString Function
+  // Functional Queue and stack using arrays
+  // Use .push(var) to append to end of arrays
+  // Use .pop() to remove the last element and return that value
+  // Use .shift() to remove and return the first element
+  // Use .unshift(var) to append to front of element
+
   // Functions - basically java methods with dynamic return type
   function addFour(a, b, b, d) {
-    return a + b + c + d;
+    return a + b + c + d; // return not nessesary
   }
   console.log(addFour(1, 2, 3, 4)); // Should print 10
 
+  // If statements (conditionals)
+  // syntax: if (condition) {code}
+  if (a = b) {
+    console.log('a(' + a + ') is equal to b(' + b + ')');
+  } else {
+    console.log('a is not equal to b');
+  }
+
+  // Switch statments - shorthand for if statment chains
+  // Example with alphabet
+  function alphaIndex(val) {
+    switch (val) {
+      case 1:
+        // Put function in here
+        toReturn = 'a';
+        break; // without break case is overwritten
+      case 2:
+        toReturn = 'b';
+        break;
+      case 3:
+        toReturn = 'c';
+        break;
+      // Multiple cases same output syntax
+      case 4:
+      case 5:
+      case 6:
+        toReturn = "I wasn't designed for this"
+        break;
+      default:
+        toReturn = 'out of range';
+    }
+
+    return toReturn;
+  }
+  // should print 'a, b, c , I wasn't designed for this
+  console.log(alphaIndex(1) + ', ' + alphaIndex(2) + ', ' + alphaIndex(3) + ', ' + alphaIndex(4));
 </script>
