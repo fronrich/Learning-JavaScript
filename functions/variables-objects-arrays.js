@@ -14,7 +14,8 @@ object
 // Assigning variables
 
 var greeting = "Hello World"; // Global variable of type string
-let happy = true; // Local variable of type boolean
+// A let variable cannot be declared twice
+let happy = true; // Local variable of type boolean.
 const pi = 3.14; // Local Final variabe of type number.
 
 // Declaring variables
