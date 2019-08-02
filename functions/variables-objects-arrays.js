@@ -11,11 +11,19 @@ number
 object
 */
 
+// Disallows compilation of code with bad hygine
+"use strict";
+
 // Assigning variables
 
-var greeting = "Hello World"; // Global variable of type string
+// The scope is detrmined by functions on var
+// var is global until overwritten beyond scope
+var greeting = "Hello World"; // Global variable of type string.
 // A let variable cannot be declared twice
+// let is as local as possible
 let happy = true; // Local variable of type boolean.
+// Basically let but read-only (final)
+// You can mutate arrays declared with const
 const pi = 3.14; // Local Final variabe of type number.
 
 // Declaring variables
@@ -46,3 +54,5 @@ console.log(JSON.stringify(nameTag)); // use JSON.stringify(array) as a toString
 // Use .pop() to remove the last element and return that value
 // Use .shift() to remove and return the first element
 // Use .unshift(var) to append to front of element
+
+// Use arrayOne.concat(arrayTwo) to combine arrays

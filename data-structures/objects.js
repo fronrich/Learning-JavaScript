@@ -1,4 +1,6 @@
 // Objects - defined as variables with properties
+// use Object.freeze(objName) to make objects immutable
+
 var fishBowl = {
   'size': 'big', // syntax for defining properties of object
   'fish': 5
