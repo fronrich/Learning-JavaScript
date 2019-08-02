@@ -73,3 +73,40 @@ let {x : xCord, y : yCord, z : zCord} = cord;
 console.log(xCord);
 console.log(yCord);
 console.log(zCord);
+
+// use nested destructuring when extrapolating
+// variables out of nested objects
+let buffet = {
+  entree: {soup: ['frenchOnion', 'wedding'], tofu: ['hard', 'soft']},
+  dessert: {cake: ['strawberry', 'carrot'], iceCream: ['vanilla', 'strawberry']}
+};
+// The array objects have to have strings extrapolated independently
+let {dessert : {iceCream : favoriteFoods}} = buffet;
+console.log(favoriteFoods);
+
+// to destructure arrays use the following syntax
+let [flavorA, flavorB] = favoriteFoods;
+
+console.log(flavorA);
+console.log(flavorB);
+
+// You can switch varibles using a combination of
+// functional programming and destructuring
+// Ex. Switching flavors
+
+(() => {[flavorA, flavorB]=[flavorB, flavorA]})();
+
+console.log(flavorA);
+console.log(flavorB);
+
+// use ...args with destructuring to destructure to the nth element
+// n being the last element
+// const [a, b, , d, ...args] blanks are not kept but the rest are saved
+// as a, b, d, and args for the remaining elements
+
+// Destructure objects within parameters like so
+function justSoup({entree}) { // obj name is relaced with {attribte}
+  return entree.soup;
+}
+
+console.log(justSoup(buffet));
