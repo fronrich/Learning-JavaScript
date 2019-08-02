@@ -61,3 +61,15 @@ function addAll(...args) {
 }
 
 console.log(addAll(10, 10, 10, 15));
+
+// Deep copy Array using spread (...) Operators
+// newArray = [...oldArray];
+
+// Destructuring
+// Take the contents of an object and assign them
+// to individual variables
+let cord = {x: 5, y: 10, z: -12};
+let {x : xCord, y : yCord, z : zCord} = cord;
+console.log(xCord);
+console.log(yCord);
+console.log(zCord);
