@@ -1,6 +1,6 @@
 // Using objects in an object array to make a closet data structure
-// Closet
-var myCloset = [
+// Main Closet boject
+var closet = [
   // Section (shelves)
   { // bottoms
     // item
@@ -35,35 +35,40 @@ var myCloset = [
 ]
 // A small object to enumerate closet sections
 var index = {
-  bottoms: 1,
-  tops: 2
+  size: 2,
+  bottoms: 0,
+  tops: 1
 }
 // Clothing Functions
 // Finds closet shelf based on array index or string id
 // converts enumeration to index if needed
-function findShelf(id) {
-  return ((typeof id) === 'number') ? // first check if number
-  (id < myCloset.length && id >= 0 ? // if number check range
-  id : undefined) // only return number in range
-  : (index.hasOwnProperty(id) ? // if not number check string
-  index[id] : undefined); // only return key of actual index
+function findShelf(sectionId) {
+  return ((typeof sectionId) === 'number') ? // first check if number
+  (sectionId < closet.length && sectionId >= 0 ? // if number check range
+  sectionId : undefined) // only return number in range
+  : (index.hasOwnProperty(sectionId) ? // if not number check string
+  index[sectionId] : undefined); // only return key of actual index
 }
 
 // Test Logs
 console.log(findShelf(5)); // out of range
 console.log(findShelf(0)); // in range
-console.log(findShelf("bottoms")); // in range
+console.log(findShelf('bottoms')); // in range
 console.log(findShelf('buttons')); // out of range
 console.log(findShelf(1)); // in range
 
-// sel item for 75% percent of its worth
-function sellItem(closet, section, item) {
-  pathAsString = closet + '.' + section + '.' + item;
-  path = pathAsString.split('.').reduce()
-  console.log(pathAsString);
-  toReturn = path.name + ' was sold for $' + (path.price * .75);
-  delete path;
-  return toReturn;
+// add section
+// abstractly unsorted
+function renovateAdd(sectionId) {
+  let section = {}; // blank section object
+  closet.push(section);
+  // When using strings, bracket notation
+  // Prevent logic errors when assigning undeclared properties
+  index[sectionId] = index.size;
+  index.size++;
+  return "Added " + sectionId + " to closet."
 }
 
-console.log(sellItem('myCloset', 'bottoms', 'blueJean'));
+console.log(index.hasOwnProperty('socks'));
+console.log(renovateAdd('socks'));
+console.log(index.hasOwnProperty('socks') + ":" + index['socks']);
